@@ -13,14 +13,16 @@ iris.info()
 print("Missing values")
 print(iris.isnull().sum())
 
+
 #TASK 1: PREPROCESSING
 translator = LabelEncoder()
 
 iris["species"] = translator.fit_transform(iris["species"])
 print("Classes mapped to:", translator.classes_)
 
-X = iris.drop("species", axis=1)
-y =iris["species"]
+X = iris[["petal_length", "petal_width"]]
+#X = iris.drop("species", axis=1)
+y = iris["species"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=6)
 print("Training data: ", len(X_train))
