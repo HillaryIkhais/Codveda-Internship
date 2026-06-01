@@ -25,7 +25,7 @@ sns.scatterplot(
     x='Total day minutes', 
     y='Customer service calls', 
     hue='Cluster', 
-    palette='viridis', 
+    palette='plasma', 
     data=churn_train, 
     s=100, 
     alpha=0.7 
